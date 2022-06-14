@@ -1,0 +1,670 @@
+<!--
+@author 罗福良
+@date  2022/6/6
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红书-标记我的生活</title>
+    <link rel="icon" href="./images/-125319918_-1595914537_222_222.png">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .product-grid {
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease 0s;
+        }
+
+
+
+        .product-grid .product-image {
+            overflow: hidden;
+        }
+
+        .product-grid .product-image img {
+            width: 100%;
+            height: auto;
+            transition: all 0.5s ease 0s;
+        }
+
+        .product-grid:hover .product-image img {
+            transform: scale(1.5);
+        }
+
+        .product-grid .product-content {
+            padding: 12px 12px 15px 12px;
+            transition: all 0.5s ease 0s;
+        }
+
+        .product-grid:hover .product-content {
+            opacity: 0;
+        }
+
+        .product-grid .title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 10px;
+        }
+
+        .product-grid .title a {
+            color: #000;
+        }
+
+        .product-grid .title a:hover {
+            color: #2e86de;
+        }
+
+        .product-grid .price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2e86de;
+        }
+
+        .product-grid .price span {
+            color: #999;
+            font-size: 15px;
+            font-weight: 400px;
+            text-decoration: line-through;
+            margin-left: 7px;
+            display: inline-block;
+        }
+
+        .product-grid .social {
+            background-color: #fff;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            opacity: 0;
+            position: absolute;
+            bottom: -50px;
+            transition: all 0.5s ease 0s;
+        }
+
+        .product-grid:hover .social {
+            opacity: 1;
+            bottom: 20px;
+
+        }
+
+        .product-grid .social li {
+            display: inline-block;
+        }
+
+
+        .product-grid .social li a {
+            color: #909090;
+            font-size: 16px;
+            line-height: 45px;
+            text-align: center;
+            height: 45px;
+            width: 45px;
+            margin: 0 7px;
+            border: 1px solid #909090;
+            border-radius: 50px;
+            display: block;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .product-grid .social li a:hover {
+            color: #ffffff;
+            background-color: #2e86de;
+        }
+
+        .price {
+            width: 40px;
+            height: 40px;
+            border: 1px solid blue;
+            border-radius: 100%;
+            overflow: hidden;
+            float: left;
+        }
+
+        .t {
+            max-height: 100%;
+        }
+
+        .span {
+            float: left;
+            margin-top: 7px;
+            margin-left: 10px;
+        }
+
+        .navbar-brand {
+            margin-left: 40px;
+        }
+
+        li {
+            margin-left: 40px;
+        }
+
+        .bg-light {
+            background-color: transparent;
+        }
+
+        .col-md-3 {
+            margin-top: 40px;
+        }
+
+        .xzt {
+            margin-left: 100px;
+        }
+
+        .xz {
+            margin-left: 150px;
+        }
+
+        a:hover {
+            text-decoration: none;
+
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            width: 10px;
+            height: 100px;
+            line-height: 40px;
+            position: absolute;
+            right: 0;
+            margin-top: 250px;
+            ;
+        }
+
+        .b:active {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <nav class="container navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;">
+        <a class="navbar-brand" href="./小红书.html"><img src="./images/49fd555a-b46b-49fd-b5a5-053fb4a536dc.png"
+                alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./首页.html" style="background-color: #ecedf0; border-radius:18%"> <b
+                            class="b">首页</b> </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./登录1.html" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        <b class="b">业务合作</b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">专业号</b></a>
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">推广合作</b></a>
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">品牌合作人</b></a>
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">商家入驻</b></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">MCN入驻</b></a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./登录1.html" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        <b class="b">创作者服务</b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">数据查询</b></a>
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">视频上传</b></a>
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">电脑直播</b></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./登录1.html"><b class="b">直播管理</b></a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./关于我们.html" target="_self"><b class="b">关于我们</b></a>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./社会责任.html"><b class="b">社会责任</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./加入我们.html" target="_self"><b class="b">加入我们</b></b></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./社会招聘.html" target="_self"><b class="b">社会招聘</b></a>
+                </li>
+
+            </ul>
+            <span class="navbar-text">
+                <a class="nav-link" href="./登录.html"><b class="b">登录</b></a>
+            </span>
+        </div>
+    </nav>
+    <video src="./images/9ec1205e68959838a18872e71268e399_6743419337524713795.mp4" autoplay="autoplay" muted loop preload="auto"
+        style="width: 100%; margin-top: 40px; "></video>
+
+
+    <div class="container">
+        <h2 class="color1 text-center">小红书灵感营销助力每一个好产品生长</h2>
+        <div class="line"></div>
+        <p class="text-center my-2 size">社区精选</p>
+    </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="./images/3040ced6-8777-a5ca-e6d1-7d7dec7cee45" alt="">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">微醺~初夏,保持有趣,伴手礼安排上</a></h3>
+                    <div class="price"><img src="./images/61d2c932fd9c885482a1e2b1.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>微醺~尼亚</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="./images/2d63ee23-4a86-2681-12be-dc4e207e6ca1" alt="">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">去昆明不去滇池我会伤心的OK?</a></h3>
+                    <div class="price"><img src="./images/6265380ebc586d2c9e2e05ce.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>艾斯Ice</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="./images/5b1d8c53-c7c7-3d76-b1a8-967c0c26eb11" alt="">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">兰达家族新成员!适合出游的高颜值潮酷SUV!</a></h3>
+                    <div class="price"><img src="./images/5cebacf44a99b60001abcc6d.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>Laucaycin凱欣🌼</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="./images/134c2d7a-401a-c25e-b943-fd2d096ab60b" alt="">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">奥迪｜娇小女生🈚️好看又适合的车可选⁉️</a></h3>
+                    <div class="price"><img src="./images/5f30c6fd0889230001f9d1fc.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>凯蒂baby</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="./images/e66de329-1893-9f8e-564a-55027d4c8a55" alt="">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">整洁如新的小房子!保持“样板间”既视感</a></h3>
+                    <div class="price"><img src="./images/5d19adf42e70570001091754.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>feifeibb</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="./images/26ab0686-fc22-6732-84da-a311f3b62ebf" alt="">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">女儿的脸蛋好软糯呀！多亏了它！</a></h3>
+                    <div class="price"><img src="./images/61601aef04494a90084902a2.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>六月baby</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="./images/45239af5-5073-b123-cdad-6d204c7e2f32" alt="">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                            无需羡慕~一起拥有喜人发量吧！</a></h3>
+                    <div class="price"><img src="./images/61d2c932fd9c885482a1e2b1.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>微醺～妮娅</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="./images/6924abb8-0a63-8001-455a-f975fe8d5202" alt="">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">我是在现场听演唱会吗😱百元耳机代入感太强</a></h3>
+                    <div class="price"><img src="./images/5f43a045392a3a000125e02b.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>超爱小丸子</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                            🌷自律vlog｜研究生6:00起床高效学习</a></h3>
+                    <div class="price"><img src="./images/5f4f6bb834e3a3000184dd95.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>沐熙</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">高质量鲜奶，选购指南❗️选好奶❗️，注意这3点</a></h3>
+                    <div class="price"><img src="./images/5d6df9bae16aea0001d0b5ee.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>DH&Jelly（高级营养师）</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                            高考竟然有通用答题公式？状元硬核思维公开</a></h3>
+                    <div class="price"><img src="./images/6294738282fc87713d23ccbd.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>
+                                Econmedian</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                            非油炸也能这么酥脆！一口气干一包真上头</a></h3>
+                    <div class="price"><img src="./images/615abc1c9a4b50a06971292e.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>张小奈NAICE</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                            分享一下小背心造型</a></h3>
+                    <div class="price"><img src="./images/628b48b3f9e6e5e2a3ebdc68 (1).jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>是杨杨哥哥呀</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                            MINI深圳车展·一辆车也有野性不羁的力量</a></h3>
+                    <div class="price"><img src="./images/5bccbaceef6b2f0001635d87.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>李大美</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                            share 适合女生的小众高级感耳机</a></h3>
+                    <div class="price"><img src="./images/627babdc416ab0af48661978.jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>雪儿Nora</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                            ⚠️居家网课|如何让孩子学习高效又护眼‼️</a></h3>
+                    <div class="price"><img src="./images/614ccf6a509f1684c75c3ddd (2).jpg" alt="" class="t">
+
+                    </div>
+                    <a href="">
+                        <div class="span"> <span>可可小姐最可爱</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="line"></div>
+            <p class="text-center my-2 size"><button type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#staticBackdrop">
+                    查看更多
+                </button>
+        </div>
+
+    </div>
+    <div class="modal fade container" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"><a class="xz">扫码下载小红书app</a></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./images/0b84da4e-3984-4603-a2f2-72a806e5494d.png" alt="" class="xzt">
+                    <p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <a href=""></a>
+    <div class="container">
+        <div class="row row-cols-4">
+            <div class="col" style="width: 200px; text-align: center;  margin-top: 40px;"><a href="#"
+                    style="text-decoration: none;">用户协议</a></div>
+            <div class="col" style="width: 200px; text-align: center;  margin-top: 40px;"><a href="#"
+                    style="text-decoration: none;">隐私政策</a></div>
+            <div class="col" style="width: 200px; text-align: center;  margin-top: 40px;"><a href="#"
+                    style="text-decoration: none;">侵权投诉指引</a></div>
+            <div class="col" style="width: 200px; text-align: center;  margin-top: 40px;"><a href="#"
+                    style="text-decoration: none;">社区规范</a></div>
+        </div>
+        <div class="box">返回顶部</div>
+
+
+        <div class="container">
+            <h6 class="color1 text-center">沪ICP备 13030189号 Copyright © 2014-2022 行吟信息科技（上海）有限公司
+                | 地址：上海市黄浦区马当路388号C座
+                | 电话：021-64224530</h6>
+            <div class="line"></div>
+            <p class="text-center my-2 size">| 自营经营者信息
+                | 2022 沪公网安备 31010102002533号</p>
+
+
+            <h6 class="color1 text-center">医疗器械经营许可证：沪嘉食药监械经营许20187006号
+                |
+                医疗器械网络交易服务第三方平台备案:（沪）网械平台备字[2019]第00006号
+                |
+                互联网药品信息服务资格证书：(沪)-经营性-2018-0011</h6>
+        </div>
+
+
+        <script>
+            onload = function () {
+                var obox = document.querySelector(".box");
+                // obox的初始top值
+                var oboxT = 200;
+                onscroll = function () {
+                    // 获取页面滚动的实时top
+                    var scrollT = document.documentElement.scrollTop;
+                    // 滚动时不断的将实时的top+初始值，在设置回去
+                    obox.style.top = oboxT + scrollT + "px";
+                }
+                var t = null;
+                // 点击事件
+                obox.onclick = function () {
+                    // 清除计时器
+                    clearInterval(t);
+                    // 开启计时器
+                    t = setInterval(function () {
+                        // 判断是否到顶部
+                        if (document.documentElement.scrollTop <= 0) {
+                            clearInterval(t);
+                        } else {  //否则，继续向上
+                            document.documentElement.scrollTop -= 100;
+                        }
+                    }, 30);
+                }
+
+            }
+        </script>
+        <script src="./js/jquery-1.10.1.js"></script>
+        <script src="./js/popper.min.js"></script>
+        <script src="./js/bootstrap.js"></script>
